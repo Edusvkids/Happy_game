@@ -10,13 +10,12 @@ func _ready():
 	$AnimatedSprite.play("run")
 
 func _physics_process(delta):
-	motion = move_and_slide(Vector2(speed * dir,0))
+	move_and_slide(Vector2(speed * dir,300), Vector2.UP)
 	patrol()
 	pass
 
 func patrol():
 	if !ray.is_colliding() or is_on_wall():
-		dir *= 1
-		ray.position.x *= 1
-		$AnimatedSprite.scale.x *= 1
+		dir *= -1
+		scale.x *= -1
 	pass
