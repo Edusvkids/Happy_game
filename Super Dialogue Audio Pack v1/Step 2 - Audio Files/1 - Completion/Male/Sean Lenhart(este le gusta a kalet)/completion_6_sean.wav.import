@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/completion_6_sean.wav-c4e5f6b5a11871357e77cb27c6494b03.sample"
+
+[deps]
+
+source_file="res://Super Dialogue Audio Pack v1/Step 2 - Audio Files/1 - Completion/Male/Sean Lenhart(este le gusta a kalet)/completion_6_sean.wav"
+dest_files=[ "res://.import/completion_6_sean.wav-c4e5f6b5a11871357e77cb27c6494b03.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

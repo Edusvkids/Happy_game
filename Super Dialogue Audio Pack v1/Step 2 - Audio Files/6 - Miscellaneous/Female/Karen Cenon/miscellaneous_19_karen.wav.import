@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/miscellaneous_19_karen.wav-1dba83526869fdcfb1eb1c4e2f3f245e.sample"
+
+[deps]
+
+source_file="res://Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Female/Karen Cenon/miscellaneous_19_karen.wav"
+dest_files=[ "res://.import/miscellaneous_19_karen.wav-1dba83526869fdcfb1eb1c4e2f3f245e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

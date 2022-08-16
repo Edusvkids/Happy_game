@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/farewell_1_ian.wav-e12437f470077c61cec6a5556cf6ca6e.sample"
+
+[deps]
+
+source_file="res://Super Dialogue Audio Pack v1/Step 2 - Audio Files/4 - Farewell/Male/Ian Lampert/farewell_1_ian.wav"
+dest_files=[ "res://.import/farewell_1_ian.wav-e12437f470077c61cec6a5556cf6ca6e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/confirmation_4_sean.wav-682e92a1ccf8bc62bd5d68dd619a9d92.sample"
+
+[deps]
+
+source_file="res://Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Male/Sean Lenhart/confirmation_4_sean.wav"
+dest_files=[ "res://.import/confirmation_4_sean.wav-682e92a1ccf8bc62bd5d68dd619a9d92.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

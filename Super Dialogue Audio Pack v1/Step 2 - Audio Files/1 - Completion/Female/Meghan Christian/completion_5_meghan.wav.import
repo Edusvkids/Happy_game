@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/completion_5_meghan.wav-42f92d8c15ebfecf42841c641d003f09.sample"
+
+[deps]
+
+source_file="res://Super Dialogue Audio Pack v1/Step 2 - Audio Files/1 - Completion/Female/Meghan Christian/completion_5_meghan.wav"
+dest_files=[ "res://.import/completion_5_meghan.wav-42f92d8c15ebfecf42841c641d003f09.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

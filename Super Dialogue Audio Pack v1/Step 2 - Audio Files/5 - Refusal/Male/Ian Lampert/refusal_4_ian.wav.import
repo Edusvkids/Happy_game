@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/refusal_4_ian.wav-59415b6f2da9511ce5c64c2580081447.sample"
+
+[deps]
+
+source_file="res://Super Dialogue Audio Pack v1/Step 2 - Audio Files/5 - Refusal/Male/Ian Lampert/refusal_4_ian.wav"
+dest_files=[ "res://.import/refusal_4_ian.wav-59415b6f2da9511ce5c64c2580081447.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

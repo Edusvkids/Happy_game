@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/refusal_6_alex.wav-20f4e857182af44f8817e60ff39e997e.sample"
+
+[deps]
+
+source_file="res://Super Dialogue Audio Pack v1/Step 2 - Audio Files/5 - Refusal/Male/Alex Brodie/refusal_6_alex.wav"
+dest_files=[ "res://.import/refusal_6_alex.wav-20f4e857182af44f8817e60ff39e997e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

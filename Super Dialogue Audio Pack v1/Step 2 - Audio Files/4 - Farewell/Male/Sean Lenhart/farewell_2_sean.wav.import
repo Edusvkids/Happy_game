@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/farewell_2_sean.wav-ed8d2b53d4803c44a956823c20daba2c.sample"
+
+[deps]
+
+source_file="res://Super Dialogue Audio Pack v1/Step 2 - Audio Files/4 - Farewell/Male/Sean Lenhart/farewell_2_sean.wav"
+dest_files=[ "res://.import/farewell_2_sean.wav-ed8d2b53d4803c44a956823c20daba2c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
