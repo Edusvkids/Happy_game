@@ -9,6 +9,10 @@ var GRAVITY = 20
 onready var ray = $RayCast2D
 
 func _physics_process(delta) -> void:
+	if $detc_izq.is_colliding():
+		Global.vidas -= 1
+	if $detc_der.is_colliding():
+		Global.vidas -= 1
 	if !ray.is_colliding() or is_on_wall():
 		forgod = not forgod
 	if forgod == true:

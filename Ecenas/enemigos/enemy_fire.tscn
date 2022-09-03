@@ -191,7 +191,6 @@ script = ExtResource( 7 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 35 )
 animation = "run"
-frame = 4
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -203,7 +202,12 @@ position = Vector2( 11, 0 )
 enabled = true
 cast_to = Vector2( 0, 20 )
 
-[node name="AtackDetect" type="RayCast2D" parent="."]
+[node name="detc_der" type="RayCast2D" parent="."]
 position = Vector2( 0, 5 )
 enabled = true
 cast_to = Vector2( 40, 0 )
+
+[node name="detc_izq" type="RayCast2D" parent="."]
+position = Vector2( 0, 5 )
+enabled = true
+cast_to = Vector2( -40, 0 )
