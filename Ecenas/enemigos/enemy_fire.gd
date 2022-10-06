@@ -1,32 +1,69 @@
 extends KinematicBody2D
 
-var VELOCIDAD = 70
-var movimiento = Vector2(0,0)
-var forgod = true
-var GRAVITY = 20
+var MoveSpeed = 3000
+var acc = 3
+var Gravedad = 20
+var dir = 1
+var t = 0
+
+var atacando = false
+var PuedeMoverse : bool = true
+
+var Velocity : Vector2 = Vector2()
+
+onready var anim = $AnimatedSprite
+onready var RaySuelo = $RayCast2D
+
+func _ready():
+	pass
+
+func _physics_process(delta):
+	ControlAtaque()
+	
+	if PuedeMoverse:
+		patrullar()
+		move_and_slide(Vector2(MoveSpeed * dir * delta ,200), Vector2.UP)
+
+func patrullar():
+	if is_on_wall() or !RaySuelo.is_colliding():
+		dir *= -1
+		scale.x *= -1
+		if!atacando:
+			anim.play("run")
+
+func ControlAtaque():
+	if $detc_b.is_colliding():
+		var col = $detc_b.get_collider()
+		if col.is_in_group("players"):
+			$detc_b.enabled = false
+			atacar()
+			yield(get_tree().create_timer(0.1),"timeout")
+			$detc_a.enabled = true
+	if $detc_a.is_colliding():
+		var col = $detc_a.get_collider()
+		if col.is_in_group("players"):
+			$detc_a.enabled = false
+			Global.vidas -= 20
+
+func morir():
+	anim.play("death");
+	PuedeMoverse = false
+	$detc_b.enable = false
+	yield(anim,"animation_finished")
+	queue_free()
+
+func atacar():
+	PuedeMoverse = false
+	atacando = true 
+	anim.play("attack")
+	if anim.frame == 2:
+		$detc_a.enabled = true
 
 
-onready var ray = $RayCast2D
-
-func _physics_process(delta) -> void:
-	if $detc_izq.is_colliding():
-		Global.vidas -= 1
-	if $detc_der.is_colliding():
-		Global.vidas -= 1
-	if !ray.is_colliding() or is_on_wall():
-		forgod = not forgod
-	if forgod == true:
-		movimiento.x = -50
-		$AnimatedSprite.play("run")
-		$CollisionShape2D.position.x = -3
-		ray.position.x = -3
-		$AnimatedSprite.flip_h = true
-	else:
-		movimiento.x = 50
-		$AnimatedSprite.play("run")
-		$CollisionShape2D.position.x = 3
-		ray.position.x = 3
-		$AnimatedSprite.flip_h = false
-	movimiento.y += GRAVITY
-	movimiento = move_and_slide(movimiento, Vector2.UP)
-	movimiento.x = lerp(movimiento.x, 0, 0.2)
+func _on_AnimatedSprite_animation_finished():
+	if anim.animation == "attack":
+		$detc_a.enabled = false 
+		anim.play("run")
+		$detc_b.enabled = true
+		PuedeMoverse = true
+		atacando = false 

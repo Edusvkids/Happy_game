@@ -19,3 +19,10 @@ func patrol():
 		dir *= -1
 		scale.x *= -1
 	pass
+
+
+func _on_Area2D_body_entered(body):
+	if body.is_in_group("players"):
+		body.velocity.x = 0
+		Global.vidas -= 10
+		body.velocity.y = 0

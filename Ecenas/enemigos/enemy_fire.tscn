@@ -8,35 +8,35 @@
 [ext_resource path="res://enemigo de fuego/attack.png" type="Texture" id=6]
 [ext_resource path="res://Ecenas/enemigos/enemy_fire.gd" type="Script" id=7]
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=37]
 atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 126, 39 )
 
-[sub_resource type="AtlasTexture" id=17]
+[sub_resource type="AtlasTexture" id=38]
 atlas = ExtResource( 6 )
 region = Rect2( 0, 39, 126, 39 )
 
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=39]
 atlas = ExtResource( 6 )
 region = Rect2( 0, 78, 126, 39 )
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=40]
 atlas = ExtResource( 6 )
 region = Rect2( 0, 117, 126, 39 )
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=41]
 atlas = ExtResource( 6 )
 region = Rect2( 0, 156, 126, 39 )
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=42]
 atlas = ExtResource( 6 )
 region = Rect2( 0, 195, 126, 39 )
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=43]
 atlas = ExtResource( 6 )
 region = Rect2( 0, 234, 126, 39 )
 
-[sub_resource type="AtlasTexture" id=23]
+[sub_resource type="AtlasTexture" id=44]
 atlas = ExtResource( 6 )
 region = Rect2( 0, 273, 126, 39 )
 
@@ -146,10 +146,10 @@ region = Rect2( 0, 273, 126, 39 )
 
 [sub_resource type="SpriteFrames" id=35]
 animations = [ {
-"frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
+"frames": [ SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ) ],
 "loop": true,
 "name": "attack",
-"speed": 7.0
+"speed": 6.0
 }, {
 "frames": [ SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ) ],
 "loop": true,
@@ -179,7 +179,7 @@ animations = [ {
 "frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
 "loop": true,
 "name": "run",
-"speed": 8.0
+"speed": 7.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=36]
@@ -191,6 +191,7 @@ script = ExtResource( 7 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 35 )
 animation = "run"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -202,12 +203,13 @@ position = Vector2( 11, 0 )
 enabled = true
 cast_to = Vector2( 0, 20 )
 
-[node name="detc_der" type="RayCast2D" parent="."]
+[node name="detc_a" type="RayCast2D" parent="."]
+position = Vector2( 0, -2 )
+cast_to = Vector2( 40, 0 )
+
+[node name="detc_b" type="RayCast2D" parent="."]
 position = Vector2( 0, 5 )
 enabled = true
 cast_to = Vector2( 40, 0 )
 
-[node name="detc_izq" type="RayCast2D" parent="."]
-position = Vector2( 0, 5 )
-enabled = true
-cast_to = Vector2( -40, 0 )
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
