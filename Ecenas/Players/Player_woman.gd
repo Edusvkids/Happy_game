@@ -24,6 +24,10 @@ func _physics_process(_delta):
 func move():
 	velocity.y += gravity
 	
+	if Input.is_action_pressed("ataque"):
+		$AnimatedSprite.play("ataque")
+		ataque = true
+	
 	if Input.is_action_pressed("mover_derecha") && ataque == false:
 		$CollisionShape2D.position.x = -4.6
 		velocity.x = min(velocity.x + acceleration, max_speed)
@@ -35,12 +39,10 @@ func move():
 	else:
 		velocity.x = 0
 	
-	if velocity.x == 0:
+	if velocity.x == 0 && ataque == false:
 		$AnimatedSprite.animation = "Idle"
 	elif velocity.x > 0 or velocity.x < 0:
 		$AnimatedSprite.animation = "Run"
-	if Input.is_action_pressed("ataque") && ataque == false:
-		ataque()
 
 func ataque():
 		ataque = true
@@ -48,11 +50,11 @@ func ataque():
 		ataque = false
 
 func jump():
-	if is_on_floor():
-		if Input.is_action_just_pressed("saltar") && ataque == false:
+	if is_on_floor() && ataque == false:
+		if Input.is_action_just_pressed("saltar"):
 			velocity.y -= jump_speed
 	
-	if !is_on_floor():
+	if !is_on_floor() && ataque == false:
 		if velocity.y < -1:
 			$AnimatedSprite.animation = "Jump"
 		if velocity.y > 1:
@@ -60,7 +62,7 @@ func jump():
 
 
 func _on_AnimatedSprite_animation_finished():
-	if $AnimatedSprite.animation == " ataque":
+	if $AnimatedSprite.animation == "ataque":
 		$AnimatedSprite.play("Idle")
 		ataque = false
 
