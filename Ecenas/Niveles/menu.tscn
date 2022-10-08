@@ -158,7 +158,7 @@ position = Vector2( 468, 520 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 5 )
 animation = "run"
-frame = 7
+frame = 2
 playing = true
 
 [node name="ParallaxLayer12" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -213,3 +213,4 @@ custom_fonts/font = SubResource( 4 )
 text = "SALIR"
 
 [connection signal="pressed" from="VBoxContainer/jugar" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="VBoxContainer2/salir" to="." method="_on_salir_pressed"]
