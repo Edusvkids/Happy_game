@@ -44,11 +44,6 @@ func move():
 	elif velocity.x > 0 or velocity.x < 0:
 		$AnimatedSprite.animation = "Run"
 
-func ataque():
-		ataque = true
-		$AnimatedSprite.play("ataque")
-		ataque = false
-
 func jump():
 	if is_on_floor() && ataque == false:
 		if Input.is_action_just_pressed("saltar"):
