@@ -8,7 +8,7 @@ var t = 0
 
 var atacando = false
 var PuedeMoverse : bool = true
-var dormir = true
+var despierto = false
 
 var Velocity : Vector2 = Vector2()
 
@@ -19,7 +19,8 @@ func _ready():
 	pass # Replace with function body.
 
 func _physics_process(delta):
-	ControlAtaque()
+	if despierto == true:
+		ControlAtaque()
 	
 	if PuedeMoverse:
 		patrullar()
@@ -29,8 +30,10 @@ func patrullar():
 	if is_on_wall() or !RaySuelo.is_colliding():
 		dir *= -1
 		scale.x *= -1
-		if!atacando:
+		if!atacando && despierto == true:
 			anim.play("hostile_run")
+		if despierto == false:
+			anim.play("pasibe_run") 
 
 func ControlAtaque():
 	if $detc_b.is_colliding():
@@ -69,3 +72,16 @@ func _on_AnimatedSprite_animation_finished():
 		atacando = false 
 
 
+
+
+func _on_Area2D_body_entered(body):
+	if body.is_in_group("players"):
+		$AnimatedSprite.play("despertar")
+		dir = 0
+		despierto = true
+
+func _on_AnimatedSprite_animation_finished_2():
+	if anim.animation == "despertar":
+		$Area2D/CollisionShape2D.disabled = true
+		anim.play("hostile_run")
+		dir = 1
