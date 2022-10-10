@@ -16,6 +16,9 @@ func _ready():
 func _physics_process(_delta):
 	if Global.vidas <= 0:
 		$AnimatedSprite.play("muerte")
+		yield(get_tree().create_timer(1),"timeout")
+		Global.vidas = 100
+		get_tree().reload_current_scene()
 	elif Global.vidas >= 0:
 		move()
 		jump()
@@ -33,11 +36,13 @@ func move():
 		velocity.x = min(velocity.x + acceleration, max_speed)
 		$AnimatedSprite.flip_h = false
 		$Area2D/CollisionShape2D.position.x = 16
+		$hit/CollisionShape2D.position.x = -5
 	elif Input.is_action_pressed("mover_izquierda") && ataque == false:
 		$CollisionShape2D.position.x = 4.6
 		velocity.x = max(velocity.x - acceleration, -max_speed)
 		$AnimatedSprite.flip_h = true
 		$Area2D/CollisionShape2D.position.x = -16
+		$hit/CollisionShape2D.position.x = 5
 	else:
 		velocity.x = 0
 	
@@ -62,10 +67,24 @@ func _on_AnimatedSprite_animation_finished():
 	if $AnimatedSprite.animation == "ataque":
 		$AnimatedSprite.play("Idle")
 		ataque = false
-
+	if $AnimatedSprite.animation == "hit":
+		$AnimatedSprite.play("Idle")
 
 func _on_AnimatedSprite_frame_changed():
 	if $AnimatedSprite.animation == "ataque":
 		$Area2D/CollisionShape2D.disabled = false
 	else:
 		$Area2D/CollisionShape2D.disabled = true
+
+
+func _on_dao_body_entered(body):
+	if body.is_in_group("slime"):
+		hit()
+
+#func _on_AnimatedSprite_animation_finished_2():
+	#if $AnimatedSprite.animation == "hit":
+		#$AnimatedSprite.play("Idle")
+
+func hit():
+		$AnimatedSprite.play("hit")
+		Global.vidas -= 10

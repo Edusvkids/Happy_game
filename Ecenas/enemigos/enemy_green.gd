@@ -4,7 +4,6 @@ var dir = 1
 var speed = 80
 var motion = Vector2()
 var is_alive:bool = true
-onready var ray = $RayCast2D
 
 func _ready():
 	$AnimatedSprite.play("run")
@@ -15,7 +14,8 @@ func _physics_process(delta):
 	pass
 
 func patrol():
-	if !ray.is_colliding() or is_on_wall():
+	if is_on_wall():
 		dir *= -1
 		scale.x *= -1
 	pass
+
