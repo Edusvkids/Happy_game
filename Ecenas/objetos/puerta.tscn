@@ -1,0 +1,55 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Pirate Bomb/Sprites/7-Objects/2-Door/2-Opening/5.png" type="Texture" id=1]
+[ext_resource path="res://Pirate Bomb/Sprites/7-Objects/2-Door/2-Opening/2.png" type="Texture" id=2]
+[ext_resource path="res://Pirate Bomb/Sprites/7-Objects/2-Door/1-Closed/1.png" type="Texture" id=3]
+[ext_resource path="res://Pirate Bomb/Sprites/7-Objects/2-Door/2-Opening/3.png" type="Texture" id=4]
+[ext_resource path="res://Pirate Bomb/Sprites/7-Objects/2-Door/2-Opening/4.png" type="Texture" id=5]
+[ext_resource path="res://Pirate Bomb/Sprites/7-Objects/2-Door/2-Opening/1.png" type="Texture" id=6]
+[ext_resource path="res://Ecenas/objetos/puerta.gd" type="Script" id=7]
+[ext_resource path="res://Pirate Bomb/Sprites/7-Objects/2-Door/3-Closing/1.png" type="Texture" id=8]
+[ext_resource path="res://Pirate Bomb/Sprites/7-Objects/2-Door/3-Closing/4.png" type="Texture" id=9]
+[ext_resource path="res://Pirate Bomb/Sprites/7-Objects/2-Door/3-Closing/3.png" type="Texture" id=10]
+[ext_resource path="res://Pirate Bomb/Sprites/7-Objects/2-Door/3-Closing/2.png" type="Texture" id=11]
+[ext_resource path="res://Pirate Bomb/Sprites/7-Objects/2-Door/3-Closing/5.png" type="Texture" id=12]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "Closing",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "closed",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "open",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "opening",
+"speed": 7.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 29.5, 45.5 )
+
+[node name="puerta" type="Area2D"]
+script = ExtResource( 7 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "closed"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 1.5, 2.5 )
+shape = SubResource( 2 )
+
+[connection signal="body_entered" from="." to="." method="_on_puerta_body_entered"]
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

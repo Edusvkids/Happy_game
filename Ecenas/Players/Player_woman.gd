@@ -1,7 +1,9 @@
 extends KinematicBody2D
 
-const acceleration = 70
-const max_speed = 200
+onready var anim = $AnimatedSprite
+
+const acceleration = 40
+const max_speed = 175
 
 var speed = 10
 var jump_speed = 400
@@ -11,13 +13,17 @@ var ataque = false
 var velocity = Vector2.ZERO
 
 func _ready():
-	$AnimatedSprite.playing = true
+	#$AnimatedSprite.playing = true
+	pass
 
 func _physics_process(_delta):
 	if Global.vidas <= 0:
 		$AnimatedSprite.play("muerte")
 		yield(get_tree().create_timer(1),"timeout")
 		Global.vidas = 100
+		Global.contador = 0
+		Global.puerta = 0
+		Global.jefe_1 = 100
 		get_tree().reload_current_scene()
 	elif Global.vidas >= 0:
 		move()
@@ -79,12 +85,45 @@ func _on_AnimatedSprite_frame_changed():
 
 func _on_dao_body_entered(body):
 	if body.is_in_group("slime"):
+		$hit/CollisionShape2D.disabled = true
+		ataque = true
 		hit()
-
-#func _on_AnimatedSprite_animation_finished_2():
-	#if $AnimatedSprite.animation == "hit":
-		#$AnimatedSprite.play("Idle")
+		yield(get_tree().create_timer(0.4),"timeout")
+		ataque = false
+		$hit/CollisionShape2D.disabled = false
+	if body.is_in_group("greep"):
+		$hit/CollisionShape2D.disabled = true
+		ataque = true
+		hit()
+		yield(get_tree().create_timer(0.4),"timeout")
+		ataque = false
+		$hit/CollisionShape2D.disabled = false
 
 func hit():
-		$AnimatedSprite.play("hit")
-		Global.vidas -= 10
+	$AnimatedSprite.play("hit")
+	Global.vidas -= 10
+
+func rebote():
+	pass
+
+func _on_Area2D_body_entered(body):
+	if body.is_in_group("slime"):
+		body.vidas -= 1
+		body.morir()
+	if body.is_in_group("fire"):
+		body.anim.play("hit")
+		body.vidas -= 1
+		body.morir()
+	if body.is_in_group("dark"):
+		body.anim.play("hi")
+		body.vidas -=1
+		body.morir()
+	if body.is_in_group("greep"):
+		body.anim.play("daño")
+		body.vidas -= 1
+		body.morir()
+	if body.is_in_group("jefe_1"):
+		body.anim.play("hit")
+		Global.jefe_1 -= 2
+		body.morir()
+

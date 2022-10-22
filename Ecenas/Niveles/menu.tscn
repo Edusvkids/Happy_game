@@ -158,7 +158,7 @@ position = Vector2( 468, 520 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 5 )
 animation = "run"
-frame = 2
+frame = 4
 playing = true
 
 [node name="ParallaxLayer12" type="ParallaxLayer" parent="ParallaxBackground"]
