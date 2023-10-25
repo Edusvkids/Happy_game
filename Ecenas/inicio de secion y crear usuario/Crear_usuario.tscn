@@ -145,6 +145,7 @@ position = Vector2( 468, 520 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "run"
+frame = 1
 playing = true
 
 [node name="ParallaxLayer12" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -205,3 +206,6 @@ margin_bottom = 68.0
 text = "Salir"
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
