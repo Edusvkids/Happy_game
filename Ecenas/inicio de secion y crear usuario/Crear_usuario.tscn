@@ -145,7 +145,7 @@ position = Vector2( 468, 520 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "run"
-frame = 1
+frame = 5
 playing = true
 
 [node name="ParallaxLayer12" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -199,7 +199,7 @@ margin_bottom = 44.0
 rect_pivot_offset = Vector2( 512, -49 )
 text = "Ir la iniciar sesión"
 
-[node name="Button3" type="Button" parent="VBoxContainer"]
+[node name="SalirBTN" type="Button" parent="VBoxContainer"]
 margin_top = 48.0
 margin_right = 128.0
 margin_bottom = 68.0
@@ -208,4 +208,5 @@ text = "Salir"
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="VBoxContainer/SalirBTN" to="." method="_on_SalirBTN_pressed"]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
