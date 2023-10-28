@@ -33,3 +33,7 @@ func _on_Button_pressed():
 	
 	# Realiza la solicitud POST con los datos directamente en el método request
 	http_request.request("https://localhost:7294/userplayer", [], HTTPClient.METHOD_POST, json_data_str)
+
+
+func _on_SalirBTN_pressed():
+	get_tree().quit()
