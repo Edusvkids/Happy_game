@@ -145,7 +145,7 @@ position = Vector2( 468, 520 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "run"
-frame = 5
+frame = 1
 playing = true
 
 [node name="ParallaxLayer12" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -187,7 +187,7 @@ margin_top = 289.0
 margin_right = 576.0
 margin_bottom = 357.0
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="CrearBTN" type="Button" parent="VBoxContainer"]
 margin_right = 128.0
 margin_bottom = 20.0
 text = "Crear cuenta"
@@ -207,6 +207,11 @@ text = "Salir"
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_Button_pressed"]
-[connection signal="pressed" from="VBoxContainer/SalirBTN" to="." method="_on_SalirBTN_pressed"]
+[node name="Label" type="Label" parent="."]
+margin_left = 911.0
+margin_top = 127.0
+margin_right = 951.0
+margin_bottom = 141.0
+
+[connection signal="pressed" from="VBoxContainer/CrearBTN" to="." method="_on_CrearBTN_pressed"]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
