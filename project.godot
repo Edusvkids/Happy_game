@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Game_Happy"
-run/main_scene="res://Ecenas/Niveles/menu.tscn"
+run/main_scene="res://Ecenas/inicio de secion y crear usuario/Login.tscn"
 config/icon="res://icon.png"
 
 [autoload]

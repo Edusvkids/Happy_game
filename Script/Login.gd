@@ -21,3 +21,7 @@ func _on_Button_pressed():
 
 func _on_SalirBTN_pressed():
 	get_tree().quit()
+
+
+func _on_crear_cuentaBTN_pressed():
+	get_tree().change_scene("res://Ecenas/inicio de secion y crear usuario/Crear_usuario.tscn")

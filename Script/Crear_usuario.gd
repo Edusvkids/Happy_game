@@ -28,3 +28,7 @@ func _on_CrearBTN_pressed():
 		notificacion.text = "Rellene los campos de textos"
 		return
 	Global.register(username.text,gmailplayer.text,passwordplayer.text,http)
+
+
+func _on_SalirBTN_pressed():
+	get_tree().quit()
