@@ -6,13 +6,6 @@ onready var gmailplayer:LineEdit=$GmailTXT
 onready var passwordplayer:LineEdit=$PasswordTXT
 onready var notificacion:Label=$Label
 
-
-
-
-
-
-
-
 func _on_HTTPRequest_request_completed(result:int, response_code:int, headers:PoolStringArray, body:PoolByteArray)->void:
 	var response_body := JSON.parse(body.get_string_from_ascii())
 	if response_code != 200:
@@ -32,3 +25,7 @@ func _on_CrearBTN_pressed():
 
 func _on_SalirBTN_pressed():
 	get_tree().quit()
+
+
+func _on_loginBTN_pressed():
+	get_tree().change_scene("res://Ecenas/inicio de secion y crear usuario/Login.tscn")

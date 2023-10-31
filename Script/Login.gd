@@ -4,7 +4,7 @@ onready var username:LineEdit=$NameTXT
 onready var passwordplayer:LineEdit=$PasswordTXT
 onready var notificacion:Label=$Label
 
-func _on_HTTPRequest_request_completed(result, response_code, headers, body):
+func _on_HTTPRequest_request_completed(result:int, response_code:int, headers:PoolStringArray, body:PoolByteArray)->void:
 	var respose_body:=JSON.parse(body.get_string_from_ascii())
 	if response_code !=200:
 		print(response_code)
@@ -13,7 +13,7 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 		get_tree().change_scene("res://Ecenas/Niveles/menu.tscn")
 
 
-func _on_Button_pressed():
+func _on_Button_pressed()->void:
 	if username.text.empty() or passwordplayer.text.empty():
 		notificacion.text = "Ingrese los datos"
 		return

@@ -28,25 +28,23 @@ func register(NamePlayer:String,GmailPlayer:String,PasswordPlayer:String,http:HT
 		"GmailPlayer":GmailPlayer,
 		"PasswordPlayer":PasswordPlayer,
 	}
-	var headers = ["Content-Type: application/json"]
+	var headers = ["Content-Type: application/json", "Authorization: Bearer "+api_key]
+
 	http.request(registerUrl,headers,false,HTTPClient.METHOD_POST,to_json(body))
 	var result := yield(http,"request_completed")as Array
 	if result[1] == 200:
 		current_token = _get_token_id_from_result(result)
 
-func login(NamePlayer:String,PasswordPlayer:String,http:HTTPRequest)->void:
+func login(userName:String,password:String,http:HTTPRequest)->void:
 	var body:={
-		"NamePlayer":NamePlayer,
-		"PasswordPlayer":PasswordPlayer,
+		"userName":userName,
+		"password":password,
 	}
 	var headers = ["Content-Type: application/json"]
-	   # Agrega la clave de API como encabezado de autorización
-	headers.append("Authorization: Bearer " + api_key)
-	http.request(loginUrl, headers, false, HTTPClient.METHOD_POST, to_json(body))
-	http.connect("request_completed", self, "_on_request_completed")
-	add_child(http)
+	http.request(loginUrl,headers,false,HTTPClient.METHOD_POST,to_json(body))
+	var result := yield(http,"request_completed")as Array
+	if result[1] == 200:
+		current_token = _get_token_id_from_result(result)
 	
 	
 	http.request(loginUrl,headers,false,HTTPClient.METHOD_POST,to_json(body))
-	print(NamePlayer)
-	print(PasswordPlayer)
