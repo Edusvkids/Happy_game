@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Ecenas/Players/Player_woman.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tilesep del nivel 1/oak_woods_tileset.png" type="Texture" id=2]
@@ -13,7 +13,6 @@
 [ext_resource path="res://tilesep del nivel 1/background/background_layer_3.png" type="Texture" id=11]
 [ext_resource path="res://tilesep del nivel 1/background/background_layer_1.png" type="Texture" id=12]
 [ext_resource path="res://tilesep del nivel 1/background/background_layer_2.png" type="Texture" id=13]
-[ext_resource path="res://Ecenas/npc/mujer.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Ecenas/objetos/puerta.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Ecenas/objetos/boton.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Ecenas/Niveles/enemigos/enemy_green.tscn" type="PackedScene" id=17]
@@ -400,10 +399,6 @@ texture = ExtResource( 22 )
 [node name="enemy_slime" parent="." instance=ExtResource( 3 )]
 position = Vector2( 879, 287 )
 scale = Vector2( 1.5, 1.5 )
-
-[node name="mujer" parent="." instance=ExtResource( 14 )]
-position = Vector2( 2648, 285 )
-scale = Vector2( 0.8, 0.8 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 2 )

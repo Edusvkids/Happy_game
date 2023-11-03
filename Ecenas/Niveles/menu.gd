@@ -1,8 +1,7 @@
 extends Node2D
 
 func _ready():
-	pass 
-
+	$Label3.text = "Bienvenido "+Global.nameuser
 
 func _on_jugar_pressed():
 	get_tree().change_scene("res://Ecenas/Niveles/Nivel_1.tscn")

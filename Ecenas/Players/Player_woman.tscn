@@ -107,7 +107,7 @@ script = ExtResource( 21 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "Idle"
-frame = 1
+frame = 5
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -127,6 +127,7 @@ position = Vector2( -5, 8 )
 shape = SubResource( 4 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="CanvasLayer"]
 position = Vector2( 192, 448 )

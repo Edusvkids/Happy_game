@@ -10,6 +10,8 @@ var vidas = 100
 var puerta = 0
 var jefe_1 = 100
 
+var nameuser = ""
+
 func _get_token_id_from_result(result:Array)->String:
 	if result.size() >= 4:
 		var result_body = JSON.parse(result[3].get_string_from_ascii())
@@ -48,3 +50,4 @@ func login(userName:String,password:String,http:HTTPRequest)->void:
 	
 	
 	http.request(loginUrl,headers,false,HTTPClient.METHOD_POST,to_json(body))
+	nameuser=userName

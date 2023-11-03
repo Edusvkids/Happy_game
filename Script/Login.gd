@@ -6,8 +6,10 @@ onready var notificacion:Label=$Label
 
 func _on_HTTPRequest_request_completed(result:int, response_code:int, headers:PoolStringArray, body:PoolByteArray)->void:
 	var respose_body:=JSON.parse(body.get_string_from_ascii())
-	if response_code !=200:
+	if response_code !=200 or response_code !=401:
 		print(response_code)
+	if response_code == 401:
+		notificacion.text = "Cuenta no existente"
 	else:
 		notificacion.text= "todo bien"
 		get_tree().change_scene("res://Ecenas/Niveles/menu.tscn")

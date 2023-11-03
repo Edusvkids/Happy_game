@@ -11,7 +11,7 @@ func _on_HTTPRequest_request_completed(result:int, response_code:int, headers:Po
 	if response_code != 200:
 		print(response_code)
 	else:
-		notificacion.text = "todo bien"
+		notificacion.text = "Cuenta creada con exito"
 		yield(get_tree().create_timer(2.0),"timeout")
 		get_tree().change_scene("res://Ecenas/inicio de secion y crear usuario/Login.tscn")
 
