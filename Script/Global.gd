@@ -1,8 +1,8 @@
 extends Node
 
 const api_key = "Key.JWTAPIMinimal2023.API"
-const loginUrl := "https://localhost:7294/userplayer/login"
-const registerUrl = "https://localhost:7294/userplayer"
+const loginUrl := "https://localhost:7294/account/signin"
+const registerUrl = "https://localhost:7294/account/signup"
 
 var current_token = ""
 var contador = 0
@@ -26,9 +26,9 @@ func _get_token_id_from_result(result:Array)->String:
 
 func register(NamePlayer:String,GmailPlayer:String,PasswordPlayer:String,http:HTTPRequest)->void:
 	var body:={
-		"NamePlayer":NamePlayer,
-		"GmailPlayer":GmailPlayer,
-		"PasswordPlayer":PasswordPlayer,
+		"namePlayer":NamePlayer,
+		"gmailPlayer":GmailPlayer,
+		"passwordPlayer":PasswordPlayer,
 	}
 	var headers = ["Content-Type: application/json", "Authorization: Bearer "+api_key]
 

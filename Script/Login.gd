@@ -10,7 +10,7 @@ func _on_HTTPRequest_request_completed(result:int, response_code:int, headers:Po
 		print(response_code)
 	if response_code == 401:
 		notificacion.text = "Cuenta no existente"
-	else:
+	if response_code == 200:
 		notificacion.text= "todo bien"
 		get_tree().change_scene("res://Ecenas/Niveles/menu.tscn")
 
