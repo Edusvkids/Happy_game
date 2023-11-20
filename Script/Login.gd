@@ -27,3 +27,9 @@ func _on_SalirBTN_pressed():
 
 func _on_crear_cuentaBTN_pressed():
 	get_tree().change_scene("res://Ecenas/inicio de secion y crear usuario/Crear_usuario.tscn")
+
+
+func _on_modo_invitado_pressed():
+	Global.nameuser = "Invitado"
+	Global.modoinvitado = true
+	get_tree().change_scene("res://Ecenas/Niveles/menu.tscn")

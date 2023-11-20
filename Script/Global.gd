@@ -11,6 +11,7 @@ var puerta = 0
 var jefe_1 = 100
 
 var nameuser = ""
+var modoinvitado = false
 
 func _get_token_id_from_result(result:Array)->String:
 	if result.size() >= 4:
