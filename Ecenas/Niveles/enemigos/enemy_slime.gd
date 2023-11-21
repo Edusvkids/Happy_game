@@ -24,6 +24,7 @@ func patrol():
 
 func morir():
 	if vidas <= 0:
+		dir = 0
 		$AnimatedSprite.play("muerte")
 		$Area2D/CollisionShape2D.disabled = true
 		yield($AnimatedSprite, "animation_finished")

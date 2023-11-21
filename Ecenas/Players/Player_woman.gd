@@ -40,13 +40,11 @@ func move():
 	if Input.is_action_pressed("mover_derecha") && ataque == false:
 		velocity.x = min(velocity.x + acceleration, max_speed)
 		$AnimatedSprite.flip_h = false
-		$Area2D/CollisionShape2D.position.x = 16
-		$hit/CollisionShape2D.position.x = -5
+		$Area2D/CollisionShape2D.position.x = 14
 	elif Input.is_action_pressed("mover_izquierda") && ataque == false:
 		velocity.x = max(velocity.x - acceleration, -max_speed)
 		$AnimatedSprite.flip_h = true
-		$Area2D/CollisionShape2D.position.x = -16
-		$hit/CollisionShape2D.position.x = 5
+		$Area2D/CollisionShape2D.position.x = -20
 	else:
 		velocity.x = 0
 	
@@ -89,13 +87,6 @@ func _on_dao_body_entered(body):
 		yield(get_tree().create_timer(0.4),"timeout")
 		ataque = false
 		$hit/CollisionShape2D.disabled = false
-	if body.is_in_group("greep"):
-		$hit/CollisionShape2D.disabled = true
-		ataque = true
-		hit()
-		yield(get_tree().create_timer(0.4),"timeout")
-		ataque = false
-		$hit/CollisionShape2D.disabled = false
 
 func hit():
 	$AnimatedSprite.play("hit")
@@ -124,4 +115,3 @@ func _on_Area2D_body_entered(body):
 		body.anim.play("hit")
 		Global.jefe_1 -= 2
 		body.morir()
-

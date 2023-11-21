@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/JDSherbert - Ultimate UI SFX Pack - Cancel - 1.mp3-9a19cf618274d702f12b028d551a1b96.mp3str"
+
+[deps]
+
+source_file="res://mp3/JDSherbert - Ultimate UI SFX Pack - Cancel - 1.mp3"
+dest_files=[ "res://.import/JDSherbert - Ultimate UI SFX Pack - Cancel - 1.mp3-9a19cf618274d702f12b028d551a1b96.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
