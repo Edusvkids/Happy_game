@@ -198,6 +198,7 @@ margin_top = 192.0
 margin_right = 706.0
 margin_bottom = 232.0
 align = 1
+secret = true
 placeholder_text = "Password"
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
@@ -218,7 +219,19 @@ custom_fonts/font = SubResource( 2 )
 text = "INICIO DE SESIÓN"
 align = 1
 
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+margin_left = 918.0
+margin_top = 553.0
+margin_right = 1021.0
+margin_bottom = 593.0
+
+[node name="modo_invitado" type="Button" parent="VBoxContainer2"]
+margin_right = 103.0
+margin_bottom = 20.0
+text = "Modo invitado"
+
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="VBoxContainer/crear_cuentaBTN" to="." method="_on_crear_cuentaBTN_pressed"]
 [connection signal="pressed" from="VBoxContainer/SalirBTN" to="." method="_on_SalirBTN_pressed"]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
+[connection signal="pressed" from="VBoxContainer2/modo_invitado" to="." method="_on_modo_invitado_pressed"]
