@@ -38,13 +38,11 @@ func move():
 		ataque = true
 	
 	if Input.is_action_pressed("mover_derecha") && ataque == false:
-		$CollisionShape2D.position.x = -4.6
 		velocity.x = min(velocity.x + acceleration, max_speed)
 		$AnimatedSprite.flip_h = false
 		$Area2D/CollisionShape2D.position.x = 16
 		$hit/CollisionShape2D.position.x = -5
 	elif Input.is_action_pressed("mover_izquierda") && ataque == false:
-		$CollisionShape2D.position.x = 3.5
 		velocity.x = max(velocity.x - acceleration, -max_speed)
 		$AnimatedSprite.flip_h = true
 		$Area2D/CollisionShape2D.position.x = -16
