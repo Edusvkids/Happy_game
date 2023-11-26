@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+var vidas = 1
 var dir = 1
 var speed = 25
 var motion = Vector2()
@@ -34,16 +35,18 @@ func _on_Area2D_body_entered(body):
 
 
 func _on_muerte_body_entered(body):
-	if body.is_in_group("players"):
-		$muerte/CollisionShape2D.disabled = true
-		$CollisionShape2D.disabled = true
-		$AnimatedSprite.play("boom2")
-		body.hit()
-		Global.vidas -= 25
-		dir = 0
+	if body.is_in_group("players") or vidas == 0:
+		morir()
 
 
 
 func _on_AnimatedSprite_animation_finished():
 	if $AnimatedSprite.animation == "boom2":
 		queue_free()
+
+func morir():
+	$muerte/CollisionShape2D.disabled = true
+	$CollisionShape2D.disabled = true
+	$AnimatedSprite.play("boom2")
+	Global.vidas -= 10
+	dir = 0

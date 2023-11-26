@@ -10,8 +10,8 @@ config_version=4
 
 [application]
 
-config/name="Game_Happy"
-run/main_scene="res://Ecenas/inicio de secion y crear usuario/Login.tscn"
+config/name="The Warrior"
+run/main_scene="res://Ecenas/Niveles/menu.tscn"
 boot_splash/image="res://inicio-logo.png"
 boot_splash/bg_color=Color( 0.972549, 0.827451, 0.65098, 1 )
 config/icon="res://icono_del_juego.png"

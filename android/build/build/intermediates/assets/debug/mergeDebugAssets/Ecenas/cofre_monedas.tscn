@@ -1,0 +1,46 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://mapa del pirata/Sprites/Objects/Chest/Chest Close 07.png" type="Texture" id=1]
+[ext_resource path="res://mapa del pirata/Sprites/Objects/Chest/Chest Close 05.png" type="Texture" id=2]
+[ext_resource path="res://mapa del pirata/Sprites/Objects/Chest/Chest Close 06.png" type="Texture" id=3]
+[ext_resource path="res://mapa del pirata/Sprites/Objects/Chest/Chest Close 01.png" type="Texture" id=4]
+[ext_resource path="res://mapa del pirata/Sprites/Objects/Chest/Chest Close 02.png" type="Texture" id=5]
+[ext_resource path="res://mapa del pirata/Sprites/Objects/Chest/Chest Close 03.png" type="Texture" id=6]
+[ext_resource path="res://mapa del pirata/Sprites/Objects/Chest/Chest Close 04.png" type="Texture" id=7]
+[ext_resource path="res://Ecenas/cofre_monedas.gd" type="Script" id=8]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "cerrado",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "open",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "open2",
+"speed": 6.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 12, 15 )
+
+[node name="cofre_monedas" type="Area2D"]
+script = ExtResource( 8 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "open2"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 1, 1 )
+shape = SubResource( 2 )
+
+[connection signal="body_shape_entered" from="." to="." method="_on_cofre_monedas_body_shape_entered"]
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

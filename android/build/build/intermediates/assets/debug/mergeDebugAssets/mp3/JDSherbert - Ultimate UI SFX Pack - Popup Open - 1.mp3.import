@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/JDSherbert - Ultimate UI SFX Pack - Popup Open - 1.mp3-e9e0abd338797478296fd8a4b047ce3e.mp3str"
+
+[deps]
+
+source_file="res://mp3/JDSherbert - Ultimate UI SFX Pack - Popup Open - 1.mp3"
+dest_files=[ "res://.import/JDSherbert - Ultimate UI SFX Pack - Popup Open - 1.mp3-e9e0abd338797478296fd8a4b047ce3e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

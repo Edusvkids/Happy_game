@@ -1,0 +1,4 @@
+#Wed Nov 22 21:07:07 CST 2023
+base.0=/home/hector/Escritorio/Happy_game/android/build/build/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

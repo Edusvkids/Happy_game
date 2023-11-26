@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/JDSherbert - Ultimate UI SFX Pack - Error - 1.mp3-6ef5df0d9c88f16e3042c2668122d1cb.mp3str"
+
+[deps]
+
+source_file="res://mp3/JDSherbert - Ultimate UI SFX Pack - Error - 1.mp3"
+dest_files=[ "res://.import/JDSherbert - Ultimate UI SFX Pack - Error - 1.mp3-6ef5df0d9c88f16e3042c2668122d1cb.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

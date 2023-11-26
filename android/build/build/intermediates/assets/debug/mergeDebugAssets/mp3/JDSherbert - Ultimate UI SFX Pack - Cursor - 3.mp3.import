@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/JDSherbert - Ultimate UI SFX Pack - Cursor - 3.mp3-7920cf5c9a6abd01141a7bf24e5b719d.mp3str"
+
+[deps]
+
+source_file="res://mp3/JDSherbert - Ultimate UI SFX Pack - Cursor - 3.mp3"
+dest_files=[ "res://.import/JDSherbert - Ultimate UI SFX Pack - Cursor - 3.mp3-7920cf5c9a6abd01141a7bf24e5b719d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
