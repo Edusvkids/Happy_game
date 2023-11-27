@@ -199,12 +199,13 @@ position = Vector2( 598, 524 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 5 )
 animation = "run"
-frame = 3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="ParallaxBackground"]
 position = Vector2( 421, 532 )
 frames = SubResource( 14 )
+frame = 6
 playing = true
 
 [node name="ParallaxLayer12" type="ParallaxLayer" parent="ParallaxBackground"]

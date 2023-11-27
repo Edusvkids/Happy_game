@@ -16,7 +16,7 @@ func _physics_process(delta):
 func _on_puerta_body_entered(body):
 	if body.is_in_group("players"):
 		if anim.animation == "open":
-			get_tree().change_scene("res://Ecenas/Niveles/nivel_jefe_1.tscn")
+			get_tree().change_scene("res://Ecenas/Niveles/JefeMundo2.tscn")
 
 func _on_AnimatedSprite_animation_finished():
 	if anim.animation == "opening":

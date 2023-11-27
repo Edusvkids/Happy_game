@@ -48,5 +48,5 @@ func morir():
 	$muerte/CollisionShape2D.disabled = true
 	$CollisionShape2D.disabled = true
 	$AnimatedSprite.play("boom2")
-	Global.vidas -= 10
+	Global.vidas -= 20
 	dir = 0
