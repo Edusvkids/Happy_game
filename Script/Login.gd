@@ -13,6 +13,8 @@ func _on_HTTPRequest_request_completed(result:int, response_code:int, headers:Po
 	if response_code == 200:
 		notificacion.text= "todo bien"
 		get_tree().change_scene("res://Ecenas/Niveles/menu.tscn")
+	if response_code == 0:
+		notificacion.text = "Compruebe su conexion a internet."
 
 
 func _on_Button_pressed()->void:
@@ -20,6 +22,7 @@ func _on_Button_pressed()->void:
 		notificacion.text = "Ingrese los datos"
 		return
 	Global.login(username.text,passwordplayer.text,http)
+	notificacion.text = "Cargando."
 
 func _on_SalirBTN_pressed():
 	get_tree().quit()

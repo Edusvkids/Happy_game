@@ -1,8 +1,8 @@
 extends Node
 
 const api_key = "Key.JWTAPIMinimal2023.API"
-const loginUrl := "https://localhost:7294/account/signin"
-const registerUrl = "https://localhost:7294/account/signup"
+const loginUrl := "https://hapygamesapi.azurewebsites.net//account/signin"
+const registerUrl = "https://hapygamesapi.azurewebsites.net//account/signup"
 
 var current_token = ""
 var contador = 0
